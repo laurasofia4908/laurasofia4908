@@ -1,23 +1,35 @@
-class Receta:
-    def __init__(self, nombre, ingredientes, pasos):
-        self.nombre = nombre
-        self.ingredientes = ingredientes
-        self.pasos = pasos
+recetas = {}
 
-    def imprimir_receta(self):
-        print("Receta: {}".format(self.nombre))
-        print("Ingredientes:")
-        for ingrediente in self.ingredientes:
-            print("- {}".format(ingrediente))
-        print("Pasos:")
-        for i, paso in enumerate(self.pasos, 1):
-            print("{}. {}".format(i, paso))
+def agregar_receta():
+    nombre = input("Ingrese el nombre de la receta: ")
+    ingredientes = input("Ingrese los ingredientes (separados por comas): ").split(",")
+    instrucciones = input("Ingrese las instrucciones: ")
+    recetas[nombre] = {"ingredientes": ingredientes, "instrucciones": instrucciones}
+    print("Receta agregada con éxito.")
 
-receta_pizza = Receta("Pizza", ["Masa de pizza", "Salsa de tomate", "Queso", "Pepperoni"], 
-                      ["Precalienta el horno a 200 grados Celsius.",
-                       "Extiende la masa de pizza sobre una bandeja para horno.",
-                       "Unta la salsa de tomate sobre la masa.",
-                       "Espolvorea el queso y distribuye el pepperoni sobre la pizza.",
-                       "Hornea durante 15-20 minutos o hasta que la masa esté dorada y el queso derretido."])
+def mostrar_recetas():
+    if len(recetas) == 0:
+        print("No hay recetas disponibles.")
+    else:
+        for nombre, receta in recetas.items():
+            print("\nNombre: ", nombre)
+            print("Ingredientes: ", ", ".join(receta["ingredientes"]))
+            print("Instrucciones: ", receta["instrucciones"])
 
-receta_pizza.imprimir_receta()
+while True:
+    print("\n--- MENÚ ---")
+    print("1. Pizza")
+    print("2. Mostrar recetas")
+    print("3. Salir")
+
+    opcion = input("Seleccione una opción (1-3): ")
+
+    if opcion == "1"pizza
+        agregar_receta()
+    elif opcion == "2":
+        mostrar_recetas()
+    elif opcion == "3":
+        print("¡Hasta luego!")
+        break
+    else:
+        print("Opción inválida. Por favor, seleccione una opción válida.")
