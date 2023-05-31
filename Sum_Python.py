@@ -1,22 +1,10 @@
-# Crear una cadena
-nombre = "Luisa"
+palabras = ["lápiz", "león", "luna", "libro", "largo", "luz", "lindo", "leche", "lugar"]
 
-# Acceder a caracteres de la cadena
-primer_caracter = nombre[0]
-print(primer_caracter)  # Output: "L"
+letra = input("Ingresa una letra: ")
 
-# Obtener la longitud de la cadena
-longitud = len(nombre)
-print(longitud)  # Output: 5
+palabras_con_letra = [palabra for palabra in palabras if palabra.startswith(letra)]
 
-# Concatenar cadenas
-apellido = "López"
-nombre_completo = nombre + " " + apellido
-print(nombre_completo)  # Output: "Luisa López"
+print("Palabras que comienzan con la letra", letra + ":")
 
-# Convertir a mayúsculas o minúsculas
-nombre_mayusculas = nombre.upper()
-print(nombre_mayusculas)  # Output: "LUISA"
-
-nombre_minusculas = nombre.lower()
-print(nombre_minusculas)  # Output: "luisa"
+for palabra in palabras_con_letra:
+    print(palabra)
