@@ -1,35 +1,22 @@
-recetas = {}
+# Crear una cadena
+nombre = "Luisa"
 
-def agregar_receta():
-    nombre = input("Ingrese el nombre de la receta: ")
-    ingredientes = input("Ingrese los ingredientes (separados por comas): ").split(",")
-    instrucciones = input("Ingrese las instrucciones: ")
-    recetas[nombre] = {"ingredientes": ingredientes, "instrucciones": instrucciones}
-    print("Receta agregada con éxito.")
+# Acceder a caracteres de la cadena
+primer_caracter = nombre[0]
+print(primer_caracter)  # Output: "L"
 
-def mostrar_recetas():
-    if len(recetas) == 0:
-        print("No hay recetas disponibles.")
-    else:
-        for nombre, receta in recetas.items():
-            print("\nNombre: ", nombre)
-            print("Ingredientes: ", ", ".join(receta["ingredientes"]))
-            print("Instrucciones: ", receta["instrucciones"])
+# Obtener la longitud de la cadena
+longitud = len(nombre)
+print(longitud)  # Output: 5
 
-while True:
-    print("\n--- MENÚ ---")
-    print("1. Pizza")
-    print("2. Mostrar recetas")
-    print("3. Salir")
+# Concatenar cadenas
+apellido = "López"
+nombre_completo = nombre + " " + apellido
+print(nombre_completo)  # Output: "Luisa López"
 
-    opcion = input("Seleccione una opción (1-3): ")
+# Convertir a mayúsculas o minúsculas
+nombre_mayusculas = nombre.upper()
+print(nombre_mayusculas)  # Output: "LUISA"
 
-    if opcion == "1"pizza
-        agregar_receta()
-    elif opcion == "2":
-        mostrar_recetas()
-    elif opcion == "3":
-        print("¡Hasta luego!")
-        break
-    else:
-        print("Opción inválida. Por favor, seleccione una opción válida.")
+nombre_minusculas = nombre.lower()
+print(nombre_minusculas)  # Output: "luisa"
